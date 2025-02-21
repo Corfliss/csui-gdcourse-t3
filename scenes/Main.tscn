@@ -1,14 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsyfep1odrxje"]
+[gd_scene load_steps=7 format=3 uid="uid://dsyfep1odrxje"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Ground.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://d0v7t4q27q386" path="res://Scenes/Ground.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://spub5vwhwd08" path="res://assets/Screenshot 2025-02-21 110408.png" id="1_hsyps"]
+[ext_resource type="Script" path="res://scenes/GameSettings.gd" id="1_my2o3"]
+[ext_resource type="PackedScene" uid="uid://dybiotypvs3g5" path="res://scenes/Character.tscn" id="2_4dlat"]
+
+[sub_resource type="Theme" id="Theme_jqtsa"]
+default_font_size = 96
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyce6"]
+size = Vector2(298, 121)
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_my2o3")
+
+[node name="Screenshot2025-02-21110408" type="Sprite2D" parent="."]
+position = Vector2(576, 327)
+scale = Vector2(1.332, 1.52088)
+texture = ExtResource("1_hsyps")
 
 [node name="Ground" parent="." instance=ExtResource("1")]
-position = Vector2(507.708, 363.86)
+position = Vector2(176, 608)
 
 [node name="Ground2" parent="." instance=ExtResource("1")]
-position = Vector2(789.149, 294.054)
+position = Vector2(176, 298)
 
 [node name="Ground3" parent="." instance=ExtResource("1")]
-position = Vector2(225.95, 294.562)
+position = Vector2(664, 455)
+
+[node name="Ground3" parent="Ground3" instance=ExtResource("1")]
+position = Vector2(426, 164)
+
+[node name="Node2D" parent="." instance=ExtResource("2_4dlat")]
+position = Vector2(36, 520)
+
+[node name="Ground5" parent="." instance=ExtResource("1")]
+position = Vector2(880, 321)
+rotation = 1.5708
+
+[node name="Ground6" parent="." instance=ExtResource("1")]
+position = Vector2(879, 673)
+rotation = 1.5708
+
+[node name="Victory" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 438.0
+offset_top = 275.0
+offset_right = 768.0
+offset_bottom = 457.0
+theme = SubResource("Theme_jqtsa")
+text = "Victory"
+
+[node name="Objective" type="RichTextLabel" parent="."]
+offset_left = 964.0
+offset_top = 521.0
+offset_right = 1294.0
+offset_bottom = 703.0
+text = "Crouch here"
+
+[node name="CrouchArea" type="Area2D" parent="."]
+
+[node name="CrouchZone" type="CollisionShape2D" parent="CrouchArea"]
+position = Vector2(1061, 559.5)
+shape = SubResource("RectangleShape2D_eyce6")
