@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dsyfep1odrxje"]
 
-[ext_resource type="PackedScene" uid="uid://d0v7t4q27q386" path="res://Scenes/Ground.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://d0v7t4q27q386" path="res://scenes/Ground.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://spub5vwhwd08" path="res://assets/Screenshot 2025-02-21 110408.png" id="1_hsyps"]
 [ext_resource type="Script" path="res://scenes/GameSettings.gd" id="1_my2o3"]
 [ext_resource type="PackedScene" uid="uid://dybiotypvs3g5" path="res://scenes/Character.tscn" id="2_4dlat"]

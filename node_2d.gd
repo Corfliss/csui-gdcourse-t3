@@ -10,6 +10,7 @@ const ACCELERATION = 10
 @onready var dash_end_time: float = 0.0  # Tracks when dash should end
 @onready var is_dashing: bool = false  # Flag to track dash state
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -20,13 +21,12 @@ func _physics_process(delta: float) -> void:
 		can_double_jump = true  # Reset double jump when landing
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_VELOCITY
-	
+
 	# Handle Double Jump
 	elif can_double_jump and Input.is_action_just_pressed("ui_up"):
 		velocity.y = JUMP_VELOCITY
 		can_double_jump = false  # Disable double jump after using it
-		
-		
+
 	var target_speed = 0.0  # Default speed when no input
 
 	# Handle movement input
